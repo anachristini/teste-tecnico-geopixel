@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://openlayers.org/en/v6.5.0/build/ol.js" defer></script>
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Previsão do Tempo</h1>
+        <div class="search-bar">
+            <input type="text" id="city-input" placeholder="Digite o nome da cidade" aria-label="Nome da cidade">
+            <button id="search-btn">Consultar</button>
+        </div>
+    </header>
+    
+    <main>
+        <div id="loading-indicator" class="loading" style="display:none;">Carregando...</div>
+        <div id="map" class="map" aria-label="Mapa da previsão do tempo"></div>
+        <section id="weather-info">
+            <h2>Informações da Previsão</h2>
+            <div id="current-weather" class="weather-card">
+                <p><b>Cidade: </b><span id="city-name"></span></p>
+                <br>
+                <p><b>Data: </b><span id="current-date"></span></p>
+                <br>
+                <p><b>Temperatura Atual: </b><span id="temp-current"></span>°C</p>
+                <br>
+                <p><b>Máxima: </b><span id="temp-max"></span> °C, <b>Mínima: </b><span id="temp-min"></span> °C</p>
+                <br>
+                <div class="weather-description">
+                    <p><b>Clima: </b><span id="weather-description"></span></p>
+                    <br>
+                    <img id="weather-icon" src="" alt="" class="">
+                </div>
+                
+                <p><b>Probabilidade de Chuva: </b><span id="rain-prob"></span>%</p>
+                <br>
+                <div class="moon-phase">
+                    <p><b>Fase da Lua: </b><span id="moon-phase"></span></p>
+                    <img id="moon-icon" src="" alt="" class="">
+                </div>
+            </div>
+            
+        </section>
+        <div id="loading-indicator" class="loading" style="display:none;">Carregando...</div>
+            <section id="weather-info">
+            <h3>Previsão para os Próximos 4 Dias</h3>
+            <div id="forecast" class="forecast-container"></div>
+    </main>
+
+    
+    <footer>
+        <p><b>&copy; 2024 Previsão do Tempo - Desafio Geopixel</b></p>
+    </footer>
+</body>
+</html>
